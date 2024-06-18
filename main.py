@@ -158,7 +158,7 @@ def randomlearn(message):
     list4.append(random.randint(1, list4[0] + 1))
     cursor.execute("SELECT termintext FROM term WHERE id = ?", (list4[1],))
     list4.append(cursor.fetchall())
-    bot.send_message(message.chat.id, text=list4[2])
+    bot.send_message(message.chat.id, text=(list4[2]))
     bot.send_message(message.chat.id, "Введите название данного термина для проверки")
     bot.register_next_step_handler(message, checkrandom)
 
